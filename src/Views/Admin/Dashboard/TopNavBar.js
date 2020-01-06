@@ -1,8 +1,14 @@
 import React from "react";
 import { Button, Icon, Tooltip } from "antd";
-import { getDetailsFromLocalStorage } from ".././../Helpers/helper";
+import { getDetailsFromLocalStorage } from "../../../Helpers/helper";
 
 export default function TopNavBar(props) {
+  const doLogout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("login_details");
+    props.history.push("/login");
+  };
+
   return (
     <nav>
       <div className="wrap">
@@ -27,7 +33,12 @@ export default function TopNavBar(props) {
           </div>
           <div className="right">
             <Tooltip title="Logout">
-              <Button shape="circle">
+              <Button
+                onClick={() => {
+                  doLogout();
+                }}
+                shape="circle"
+              >
                 <Icon type="logout" />
               </Button>
             </Tooltip>

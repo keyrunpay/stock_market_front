@@ -1,10 +1,10 @@
 import React from "react";
 import { Button } from "antd";
-import Loading from "../../Components/Loading";
-import { getStores, deleteStore } from "../../api/apiCalls";
+import { getStores, deleteStore } from "../../../api/apiCalls";
 import AddStoreModal from "./AddStoreModel";
-import YesNoModal from "../../Components/YesNoModal/YesNoModal";
-import { displayAllError } from "../../Helpers/helper";
+import YesNoModal from "../../../Components/YesNoModal/YesNoModal";
+import { displayAllError } from "../../../Helpers/helper";
+import Loading from "../../../Components/Loading";
 
 export default function Stores() {
   const [state, setState] = React.useState({

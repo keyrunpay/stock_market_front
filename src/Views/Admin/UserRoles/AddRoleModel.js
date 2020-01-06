@@ -1,7 +1,7 @@
 import React from "react";
 import { Modal, Form, Select } from "antd";
-import { displayAllError } from "../../Helpers/helper";
-import { assignRoles } from "../../api/apiCalls";
+import { displayAllError } from "../../../Helpers/helper";
+import { assignRoles } from "../../../api/apiCalls";
 
 export default function AddRoleModal(props) {
   const [loading, setLoading] = React.useState(false);

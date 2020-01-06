@@ -40,3 +40,23 @@ export const deleteStore = id => {
 export const resetUser = id => {
   return axiosInstance.post("reset_password", { user_id: id });
 };
+
+export const getMyStores = () => {
+  return axiosInstance.get("store");
+};
+
+export const getStoreSupplier = store_id => {
+  return axiosInstance.get("supplier/" + store_id);
+};
+
+export const getStoreProduct = store_id => {
+  return axiosInstance.get("product/" + store_id);
+};
+
+export const addSupplier = payload => {
+  return axiosInstance.post("supplier", payload);
+};
+
+export const addProduct = payload => {
+  return axiosInstance.post("product", payload);
+};

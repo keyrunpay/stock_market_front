@@ -1,7 +1,7 @@
 import Axios from "axios";
 import { notification } from "antd";
-// export const base_url = "http://shresthastore.com/somtu/api/public/";
-export const base_url = "http://localhost/stock/public/";
+export const base_url = "http://shresthastore.com/api/public/";
+// export const base_url = "http://localhost/stock/public/";
 
 export const axiosInstance = Axios.create({
   baseURL: base_url,

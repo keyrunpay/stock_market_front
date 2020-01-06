@@ -1,6 +1,6 @@
 import React from "react";
 import { Menu, Icon, Layout } from "antd";
-import logo from "../../assets/images/logo.png";
+import logo from "../../../assets/images/logo.png";
 import { NavLink } from "react-router-dom";
 
 export default function DashboardSlider(props) {
@@ -49,7 +49,7 @@ export default function DashboardSlider(props) {
           </Menu.Item>
           <Menu.Item key="2">
             <NavLink
-              to="/admin/notice"
+              to="/admin/store"
               isActive={e => {
                 if (e && e.isExact) setSelectedItem("2");
               }}
@@ -66,7 +66,7 @@ export default function DashboardSlider(props) {
               }}
             >
               <Icon type="pie-chart" />
-              <span>Store User Roles</span>
+              <span>User Roles</span>
             </NavLink>
           </Menu.Item>
         </Menu>

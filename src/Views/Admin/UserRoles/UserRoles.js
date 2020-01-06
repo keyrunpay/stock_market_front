@@ -1,8 +1,8 @@
 import React from "react";
 import { Button } from "antd";
-import Loading from "../../Components/Loading";
-import { getRoles, getUsers, getStores } from "../../api/apiCalls";
+import { getRoles, getUsers, getStores } from "../../../api/apiCalls";
 import AddRoleModal from "./AddRoleModel";
+import Loading from "../../../Components/Loading";
 
 export default function UserRole() {
   const [state, setState] = React.useState({

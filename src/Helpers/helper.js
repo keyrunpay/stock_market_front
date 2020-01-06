@@ -1,7 +1,9 @@
 import { notification } from "antd";
 
 export const getDetailsFromLocalStorage = () => {
-  return JSON.parse(localStorage.getItem("login_details")) || null;
+  const data = localStorage.getItem("login_details");
+  if (data) return JSON.parse(data);
+  return { name: null };
 };
 
 export const displayAllError = err => {

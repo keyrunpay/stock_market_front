@@ -1,11 +1,11 @@
 import React from "react";
 import "./_content.scss";
 import { Button, Tooltip } from "antd";
-import Loading from "../../Components/Loading";
-import { getUsers, deleteUser, resetUser } from "../../api/apiCalls";
+import Loading from "../../../Components/Loading";
+import { getUsers, deleteUser, resetUser } from "../../../api/apiCalls";
 import AddUserModal from "./AddUserModal";
-import YesNoModal from "../../Components/YesNoModal/YesNoModal";
-import { displayAllError } from "../../Helpers/helper";
+import YesNoModal from "../../../Components/YesNoModal/YesNoModal";
+import { displayAllError } from "../../../Helpers/helper";
 
 export default function Users() {
   const [state, setState] = React.useState({

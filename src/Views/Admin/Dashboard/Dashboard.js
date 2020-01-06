@@ -21,6 +21,7 @@ export default function Dashboard(props) {
         </div>
         <div className="dashboard-right">
           <TopNavBar
+            history={props.history}
             sliderCollapsed={sliderCollapsed}
             setSliderCollapsed={setSliderCollapsed}
           />
@@ -28,7 +29,7 @@ export default function Dashboard(props) {
             <Switch>
               <Route path={props.match.url + "/"} exact component={Users} />
               <Route
-                path={props.match.url + "/notice"}
+                path={props.match.url + "/store"}
                 exact
                 component={Stores}
               />

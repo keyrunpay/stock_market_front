@@ -1,7 +1,7 @@
 import React from "react";
 import { Modal, Input, Form, Select } from "antd";
-import { addUser } from "../../api/apiCalls";
-import { displayAllError } from "../../Helpers/helper";
+import { addUser } from "../../../api/apiCalls";
+import { displayAllError } from "../../../Helpers/helper";
 
 export default function AddUserModal(props) {
   const [loading, setLoading] = React.useState(false);

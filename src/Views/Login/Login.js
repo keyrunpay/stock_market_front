@@ -29,6 +29,9 @@ export default function Login(props) {
         if (res.details.is_admin) {
           props.history.push("/admin");
         }
+        if (res.details.is_user) {
+          props.history.push("/store_user");
+        }
       })
       .catch(err => {
         if (err.username) {

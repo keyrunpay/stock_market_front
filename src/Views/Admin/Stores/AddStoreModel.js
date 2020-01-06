@@ -1,7 +1,7 @@
 import React from "react";
 import { Modal, Input, Form } from "antd";
-import { displayAllError } from "../../Helpers/helper";
-import { addStore } from "../../api/apiCalls";
+import { displayAllError } from "../../../Helpers/helper";
+import { addStore } from "../../../api/apiCalls";
 
 export default function AddStoreModal(props) {
   const [loading, setLoading] = React.useState(false);
