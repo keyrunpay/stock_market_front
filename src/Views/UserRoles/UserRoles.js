@@ -32,6 +32,7 @@ export default function UserRole() {
   };
 
   const fetchRole = () => {
+    setState({ ...state, loading: true, error: false, data: [] });
     getRoles()
       .then(res => {
         setState({ ...state, loading: false, error: false, data: res });
@@ -48,7 +49,6 @@ export default function UserRole() {
 
   React.useEffect(() => {
     fetchRole();
-    // getReadyForAddingRole();
     // eslint-disable-next-line
   }, [true]);
 
@@ -61,6 +61,9 @@ export default function UserRole() {
         visible={showAddRole}
         onCancelPressed={() => {
           setShowAddRole(false);
+        }}
+        refresh={() => {
+          fetchRole();
         }}
       />
       <div className="flex jcsb">
@@ -131,8 +134,6 @@ const ContentTableItems = props => {
       </td>
       <td>{props.created_at}</td>
       <td className="actions">
-        <Button shape="circle" icon="edit" size="small" type="primary" />
-        <div className="hgap"></div>
         <Button shape="circle" icon="close" size="small" type="danger" />
       </td>
     </tr>

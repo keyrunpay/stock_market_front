@@ -3,7 +3,6 @@ import "./_dashboard.scss";
 import DashboardSlider from "./DashboardSlider";
 import TopNavBar from "./TopNavBar";
 import { Switch, Route } from "react-router-dom";
-import AddContent from "../AddContent/AddContent";
 import Users from "../Users/Users";
 import Stores from "../Stores/Stores";
 import UserRole from "../UserRoles/UserRoles";
@@ -37,11 +36,6 @@ export default function Dashboard(props) {
                 path={props.match.url + "/roles"}
                 exact
                 component={UserRole}
-              />
-              <Route
-                path={props.match.url + "/add/:category"}
-                exact
-                component={AddContent}
               />
             </Switch>
           </div>

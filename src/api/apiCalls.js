@@ -16,9 +16,6 @@ export const getUsers = () => {
   return axiosInstance.get("user");
 };
 
-export const addContents = payload => {
-  return axiosInstance.get("user");
-};
 export const addUser = payload => {
   return axiosInstance.post("user", payload);
 };
@@ -27,4 +24,19 @@ export const addStore = payload => {
 };
 export const getRoles = () => {
   return axiosInstance.get("view_user_role");
+};
+
+export const assignRoles = payload => {
+  return axiosInstance.post("assign_role", payload);
+};
+
+export const deleteUser = user_id => {
+  return axiosInstance.delete("user/" + user_id);
+};
+export const deleteStore = id => {
+  return axiosInstance.delete("store/" + id);
+};
+
+export const resetUser = id => {
+  return axiosInstance.post("reset_password", { user_id: id });
 };

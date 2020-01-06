@@ -1,21 +1,19 @@
 import React from "react";
-import { Modal, Input, Form, Select } from "antd";
+import { Modal, Form, Select } from "antd";
 import { displayAllError } from "../../Helpers/helper";
-import { addStore } from "../../api/apiCalls";
+import { assignRoles } from "../../api/apiCalls";
 
 export default function AddRoleModal(props) {
   const [loading, setLoading] = React.useState(false);
   const [state, setState] = React.useState({
-    name: ""
+    user_id: 0,
+    role: 1,
+    store_id: 0
   });
 
-  React.useEffect(() => {
-    // console.log(props);
-  }, [props]);
-
-  const addStores = () => {
+  const submitRole = () => {
     setLoading(true);
-    addStore(state)
+    assignRoles(state)
       .then(res => {
         props.onCancelPressed();
         props.refresh();
@@ -39,7 +37,7 @@ export default function AddRoleModal(props) {
           props.onCancelPressed();
         }}
         onOk={() => {
-          addStores();
+          submitRole();
         }}
         okButtonProps={{ loading: loading }}
         cancelButtonProps={{}}
@@ -63,9 +61,9 @@ function AddStoreForm(props) {
           <Form.Item label="User">
             <Select
               placeholder="User"
-              value={props.user[0].id}
+              //   value={props.state.user_id}
               onChange={value => {
-                // props.setState({ ...props.state, gender: value });
+                props.setState({ ...props.state, user_id: parseInt(value) });
               }}
             >
               {props.user.map(item => {
@@ -83,9 +81,9 @@ function AddStoreForm(props) {
           <Form.Item label="Store">
             <Select
               placeholder="Store"
-              value={props.store[0].id}
+              //   defaultValue={props.store[0].id}
               onChange={value => {
-                // props.setState({ ...props.state, gender: value });
+                props.setState({ ...props.state, store_id: parseInt(value) });
               }}
             >
               {props.store.map(item => {
@@ -102,9 +100,9 @@ function AddStoreForm(props) {
         <Form.Item label="Role">
           <Select
             placeholder="Role"
-            value={1}
+            defaultValue={1}
             onChange={value => {
-              // props.setState({ ...props.state, gender: value });
+              props.setState({ ...props.state, role: parseInt(value) });
             }}
           >
             <Select.Option key={1} value={1}>

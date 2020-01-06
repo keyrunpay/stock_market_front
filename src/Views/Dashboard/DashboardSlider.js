@@ -62,7 +62,7 @@ export default function DashboardSlider(props) {
             <NavLink
               to="/admin/roles"
               isActive={e => {
-                if (e && e.isExact) setSelectedItem("2");
+                if (e && e.isExact) setSelectedItem("3");
               }}
             >
               <Icon type="pie-chart" />
